@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2468e8">
+  <meta name="description" content="Puppy Word Race is a colorful word-typing game for kids. Type each word to help your puppy race to the finish!">
+  <title>Puppy Word Race — Typing Games Free</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="https://typinggamesfree.io/" target="_blank" rel="noopener noreferrer" aria-label="Visit TypingGamesFree.io">
+        <span class="brand-icon" aria-hidden="true">⌨️</span>
+        <span class="brand-words"><b>TypingGames</b><small>FREE.IO</small></span>
+      </a>
+      <a class="back-link" href="https://typinggamesfree.io/" target="_blank" rel="noopener noreferrer">More typing games <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <section class="intro panel" id="intro-screen">
+      <div class="intro-copy">
+        <div class="pill"><span class="sparkle">✦</span> WORDS · GRADES K–2</div>
+        <h1>Ready, set,<br><span>puppy race!</span></h1>
+        <p class="intro-lede">Meet Dash, your speedy little pup! Type each word to help Dash race down the track. Spell it right, move ahead, and dash to the finish line!</p>
+        <div class="feature-row">
+          <span>🐶 Cute puppy</span><span>🔤 Word practice</span><span>🏁 Race to win</span>
+        </div>
+        <button class="primary-btn" id="start-btn">Start Race <span aria-hidden="true">➜</span></button>
+        <p class="small-note">Short words · Friendly practice · 60-second race</p>
+      </div>
+      <div class="intro-scene" aria-label="Illustration of a puppy ready to race">
+        <div class="sun"></div><div class="cloud cloud-a"></div><div class="cloud cloud-b"></div>
+        <div class="flag flag-a">GO!</div><div class="flag flag-b">🏁</div>
+        <div class="intro-puppy">
+          <div class="tail"></div><div class="ear ear-left"></div><div class="ear ear-right"></div>
+          <div class="dog-head"><div class="patch"></div><div class="eye eye-left"></div><div class="eye eye-right"></div><div class="muzzle"><div class="nose"></div><div class="mouth"></div></div><div class="cheek"></div></div>
+          <div class="dog-body"><div class="belly"></div></div><div class="leg leg-a"></div><div class="leg leg-b"></div><div class="collar"><i></i></div>
+        </div>
+        <div class="track-stripe"></div><div class="grass"></div>
+        <div class="scene-label">DASH THE PUPPY <span>🐾</span></div>
+      </div>
+      <div class="intro-credit">
+        <span>Play more free typing games at</span>
+        <a href="https://typinggamesfree.io/" target="_blank" rel="noopener noreferrer">TypingGamesFree.io ↗</a>
+      </div>
+    </section>
+
+    <section class="game panel hidden" id="game-screen">
+      <div class="game-top">
+        <div><div class="pill">🏁 THE WORD RACE</div><h2>Help Dash zoom!</h2></div>
+        <button class="quiet-btn" id="home-btn">↶ <span>Home</span></button>
+      </div>
+      <div class="stats">
+        <div class="stat"><span class="stat-emoji">⭐</span><div><small>SCORE</small><strong id="score">0</strong></div></div>
+        <div class="stat"><span class="stat-emoji">🐾</span><div><small>WORDS</small><strong id="words-done">0</strong></div></div>
+        <div class="stat"><span class="stat-emoji">🎯</span><div><small>ACCURACY</small><strong id="accuracy">100%</strong></div></div>
+        <div class="stat"><span class="stat-emoji">⏱️</span><div><small>TIME LEFT</small><strong><span id="time">60</span>s</strong></div></div>
+      </div>
+      <div class="race-track" id="race-track">
+        <div class="track-sky"><span class="track-sun"></span><span class="track-cloud cloud-1"></span><span class="track-cloud cloud-2"></span></div>
+        <div class="lane lane-top"><span class="lane-label">DASH</span><div class="racer dog-racer" id="dog-racer"><span class="racer-face">🐶</span><span class="speed-lines">〰</span></div></div>
+        <div class="lane lane-bottom"><span class="lane-label rival-label">RIVAL</span><div class="racer rival-racer" id="rival-racer"><span>🐱</span></div></div>
+        <div class="finish-line"><span>FINISH</span></div>
+        <div class="track-bottom"></div>
+      </div>
+      <div class="word-panel">
+        <div class="word-instruction">TYPE THIS WORD</div>
+        <div class="word-target" id="word-target">PUP</div>
+        <label class="sr-only" for="word-input">Type the word shown above</label>
+        <input id="word-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="12" placeholder="Type the word here…" aria-describedby="word-help">
+        <p id="word-help" class="word-help">Type the whole word, then press Enter.</p>
+        <div class="word-feedback" id="word-feedback" aria-live="polite">You can do it, racer!</div>
+        <button class="submit-btn" id="submit-word">Submit Word ↗</button>
+      </div>
+      <div class="progress-row"><span>Race progress</span><div class="progress-bar"><i id="progress-fill"></i></div><strong id="progress-label">0%</strong></div>
+    </section>
+
+    <section class="results panel hidden" id="results-screen">
+      <div class="trophy">🏆🐶🏁</div>
+      <div class="pill">RACE COMPLETE!</div>
+      <h2 id="result-title">Pawsome job!</h2>
+      <p id="result-message">Dash had a great time racing with you.</p>
+      <div class="result-stats">
+        <div><small>FINAL SCORE</small><strong id="final-score">0</strong></div>
+        <div><small>WORDS TYPED</small><strong id="final-words">0</strong></div>
+        <div><small>ACCURACY</small><strong id="final-accuracy">100%</strong></div>
+      </div>
+      <button class="primary-btn" id="play-again-btn">Race Again <span aria-hidden="true">↻</span></button>
+      <button class="text-btn" id="intro-btn">Back to intro</button>
+      <p class="results-link">Want another challenge? <a href="https://typinggamesfree.io/" target="_blank" rel="noopener noreferrer">Explore TypingGamesFree.io ↗</a></p>
+    </section>
+
+    <footer class="site-footer">
+      <span>🐾 Puppy Word Race</span>
+      <span>Made for little learners · <a href="https://typinggamesfree.io/" target="_blank" rel="noopener noreferrer">TypingGamesFree.io</a></span>
+    </footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
